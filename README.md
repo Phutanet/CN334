@@ -34,4 +34,5 @@ DB_CONNECTION=mysql<br/>
 Now go to database folder and create a new file named <b>database.sqlite</b> (see the extension, it should be .sqlite not .txt)
 
 Now atlast, run => <b>php artisan migrate</b>
+<p>Siraphat Phetsakun</p>
 
