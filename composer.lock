@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6613cd982605a235cd50e6236c0f841",
+    "content-hash": "3696651f7363395f732471ba1c70a48f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1488,27 +1488,27 @@
         },
         {
             "name": "laravel/jetstream",
-            "version": "v1.6.6",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
-                "reference": "9de2b4555b34a857465b14d1ada66c9b672f4251"
+                "reference": "190441d4a3553687f09fe33a74bfe203e6cae2c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/jetstream/zipball/9de2b4555b34a857465b14d1ada66c9b672f4251",
-                "reference": "9de2b4555b34a857465b14d1ada66c9b672f4251",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/190441d4a3553687f09fe33a74bfe203e6cae2c2",
+                "reference": "190441d4a3553687f09fe33a74bfe203e6cae2c2",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "illuminate/support": "^8.0",
                 "jenssegers/agent": "^2.6",
-                "laravel/fortify": "^1.0",
+                "laravel/fortify": "^1.6.1",
                 "php": "^7.3|^8.0"
             },
             "require-dev": {
-                "inertiajs/inertia-laravel": "^0.2.4",
+                "inertiajs/inertia-laravel": "^0.3",
                 "laravel/sanctum": "^2.6",
                 "mockery/mockery": "^1.0",
                 "orchestra/testbench": "^6.0",
@@ -1517,7 +1517,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-master": "2.x-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -1550,7 +1550,7 @@
                 "issues": "https://github.com/laravel/jetstream/issues",
                 "source": "https://github.com/laravel/jetstream"
             },
-            "time": "2021-01-05T15:53:01+00:00"
+            "time": "2021-12-30T20:37:45+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -2088,16 +2088,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v2.7.2",
+            "version": "v2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "991e5bd8a48e450d23cd55336964f916e92a6464"
+                "reference": "f6b1726d1068a5b7315f03dc4e58d5763b928374"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/991e5bd8a48e450d23cd55336964f916e92a6464",
-                "reference": "991e5bd8a48e450d23cd55336964f916e92a6464",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/f6b1726d1068a5b7315f03dc4e58d5763b928374",
+                "reference": "f6b1726d1068a5b7315f03dc4e58d5763b928374",
                 "shasum": ""
             },
             "require": {
@@ -2148,15 +2148,15 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v2.7.2"
+                "source": "https://github.com/livewire/livewire/tree/v2.8.2"
             },
             "funding": [
                 {
-                    "url": "https://github.com/calebporzio",
+                    "url": "https://github.com/livewire",
                     "type": "github"
                 }
             ],
-            "time": "2021-10-20T02:27:35+00:00"
+            "time": "2021-12-10T19:37:40+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
