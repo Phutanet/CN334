@@ -20,7 +20,7 @@
         @import url('https://fonts.googleapis.com/css?family=Numans');
 
         html,body{
-        background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+        background: url('{{url("/images/bg.png")}}') no-repeat;
         background-size: cover;
         background-repeat: no-repeat;
         height: 100%;
@@ -43,7 +43,7 @@
         .social_icon span{
         font-size: 60px;
         margin-left: 10px;
-        color: #FFC312;
+        color: #19B3D3;
         }
 
         .social_icon span:hover{
@@ -63,7 +63,7 @@
 
         .input-group-prepend span{
         width: 50px;
-        background-color: #FFC312;
+        background-color: #19B3D3;
         color: black;
         border:0 !important;
         }
@@ -88,7 +88,7 @@
 
         .login_btn{
         color: black;
-        background-color: #FFC312;
+        background-color: #19B3D3;
         width: 100px;
         }
 
