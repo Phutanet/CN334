@@ -340,10 +340,3 @@
 
 </body>
 </html>
-
-<!--
-    <form action="/task/{{$task->id}}" class="inline-block">
-        <button type="submit" name="delete" formmethod="POST" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button>
-            {{ csrf_field() }}
-    </form>
- -->
