@@ -1,60 +1,148 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<title>Register Page</title>
+  
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        background: url(https://i.ibb.co/nnCb7gV/6845078.png) no-repeat;
+        height: 100vh;
+        font-family: sans-serif;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        overflow: hidden
+        }
 
-        <x-jet-validation-errors class="mb-4" />
+        .loginBox {
+            margin-top: 10px
+        }
 
+        @media screen and (max-width: 600px;
+
+        ) {
+            body {
+                background-size: cover;
+                : fixed
+            }
+        }
+
+        #particles-js {
+            height: 100%
+        }
+
+        .loginBox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            min-height: 200px;
+            background: #000000;
+            border-radius: 10px;
+            padding: 40px;
+            box-sizing: border-box
+        }
+
+        .user {
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 20px
+        }
+
+        h3 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #59238F;
+            text-align: center
+        }
+
+        .loginBox input {
+            width: 100%;
+            margin-bottom: 20px
+        }
+
+        .loginBox input[type="text"],
+        .loginBox input[type="password"] {
+            border: none;
+            border-bottom: 2px solid #262626;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            background: transparent;
+            font-size: 16px;
+            padding-left: 20px;
+            box-sizing: border-box
+        }
+
+        .loginBox input[type="text"]:hover,
+        .loginBox input[type="password"]:hover {
+            color: #42F3FA;
+            border: 1px solid #42F3FA;
+            box-shadow: 0 0 5px rgba(0, 255, 0, .3), 0 0 10px rgba(0, 255, 0, .2), 0 0 15px rgba(0, 255, 0, .1), 0 2px 0 black
+        }
+
+        .loginBox input[type="text"]:focus,
+        .loginBox input[type="password"]:focus {
+            border-bottom: 2px solid #42F3FA
+        }
+
+        .inputBox {
+            position: relative
+        }
+
+        .inputBox span {
+            position: absolute;
+            top: 10px;
+            color: #262626
+        }
+
+        .loginBox input[type="submit"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            font-size: 16px;
+            background: #59238F;
+            color: #fff;
+            border-radius: 20px;
+            cursor: pointer
+        }
+
+        .loginBox a {
+            color: #262626;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            display: block
+        }
+
+        a:hover {
+            color: #00ffff
+        }
+
+        p {
+            color: #0000ff
+        }
+    </style>
+</head>
+<body>
+    <div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
+        <h3>Sign Up Here</h3>
         <form method="POST" action="{{ route('register') }}">
             @csrf
-
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-jet-label for="terms">
-                        <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms"/>
-
-                            <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-                            </div>
-                        </div>
-                    </x-jet-label>
-                </div>
-            @endif
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+            
+            <div class="inputBox"> <input type="text" name="First_Name" placeholder="Name" id="fname" required> </div>
+            <div class="inputBox"> <input type="text" name="email" placeholder="email" id="email"> </div>
+            <div class="inputBox"> <input type="password" name="password" placeholder="password" id="password" minlength="8" required> </div>
+            <div class="inputBox"> <input type="password" name="Confirm Password" placeholder="Re-password" id="password_confirmation" minlength="8" required> </div> 
+            <button type="submit" class="inputBox">{{ __('Register') }}</button>
+        </form> <a href="#">Sign-in</a>
+    </div>
+</body>
