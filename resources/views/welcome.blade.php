@@ -16,21 +16,47 @@
         -->
 
         <style>
-            /* *{
-                margin: 0;
-                padding: 0;
-                font-family: 'sans-serif';
+            .wallpaper{
+            background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('{{url("/images/bg.png")}}') no-repeat;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            transition: 0.5s;
             }
 
-            body{
+            .content{
                 width: 100%;
-                height: 100vh;
-                background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url("wallpaper1.jpg");
-                background-size: cover;
-                background-position: center;
-            } */
-            body{
-                background-color: lightblue;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+                color: #fff;
+            }
+
+            .content h1{
+                font-size: 70px;
+                margin-top: 80px;
+            }
+
+            .content p{
+                margin: 20px auto;
+                font-weight: 100;
+                line-height: 25px;
+            }
+
+            a{
+                /* display: block;
+                width: 200px;
+                padding: 15px 0;
+                text-align: center;
+                margin: 20px 672px;
+                border-radius: 25px;
+                font-weight: bold;
+                border: 2px solid #009688;
+                background: transparent;
+                color: #fff;
+                cursor: pointer; */
             }
 
         </style>
@@ -39,25 +65,31 @@
     </head>
 
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="btn btn-outline-primary">Login</a>
+        <div class="wallpaper">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn btn-outline-secondary">Register</a>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            
+            <div class="content">
+                <h1>WELCOME</h1>
+                <p>Manage your to do list here.</p>
+
+                <div>
+                    @if (Route::has('login'))
+                        <div>
+                            @auth
+                                <a href="{{ url('/dashboard') }}">Dashboard</a>
+                            @else
+                                <a href="{{ route('login') }}" class="btn btn-outline-primary w-25">Login</a>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="btn btn-outline-warning w-25">Register</a>
+                            @endif
                         @endif
-                    @endif
+                    </div>
+                    @endif  
                 </div>
-            @endif  
-        </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        
-        <img src="/images/wallpaper1.jpg" alt="Cover Image"/>
+            </div>
         </div>
     </body>
 </html>
