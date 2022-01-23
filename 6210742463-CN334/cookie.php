@@ -2,7 +2,7 @@
 <?php
 $cookie_name = "User";
 $cookie_value = "Siraphat Phetsakun";
-setcookie($cookie_name, $cookie_value, time() + (30 * 30), "/"); // 86400 = 1 day
+setcookie($cookie_name, $cookie_value, time() + (30), "/"); 
 ?>
 <html>
 <body>
