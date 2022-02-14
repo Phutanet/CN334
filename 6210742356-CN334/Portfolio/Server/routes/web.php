@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TasksController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +12,7 @@ use App\Http\Controllers\TasksController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::get('/api/hello', function () {
-    return  response()->json(['name' => 'hello']); // {"name":"hello"}
 });
