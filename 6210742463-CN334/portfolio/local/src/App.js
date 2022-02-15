@@ -1,23 +1,13 @@
-import './App.css';
-import React, {useState} from 'react';
+import React from 'react';
+import Navbar from './components/navbar/Navbar';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
-
-  let [hello, setHello] = useState('')
-
-  const onClickHello = () => {
-    fetch('/api/hello')
-    .then(response => response.json())
-    .then(result => setHello(result.name))
-    .catch(err => alert(err))
-    }
-
   return (
-    <div>
-      <button  onClick={onClickHello}>แสดงสวัสดี</button>
-      <div>{hello}</div>
-    </div>
-  );
+    <>
+    <Navbar />
+    </>
+  )
 }
 
 export default App;
