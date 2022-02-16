@@ -1,7 +1,8 @@
 :root {
-    --primary : #ac2b24;
-    --secondary : #f3b101;
-    --tertiary : #20822d;
+    --primary : #000000;
+    --secondary : #EEEEEE;
+    --tertiary : #BC8CF2;
+    --quaternary : #AA14F0;
 }
 
 * {
@@ -106,11 +107,47 @@ color: var(--secondary);
    background-color: var(--tertiary);
 }
 
+.mobile_nav.is-active{
+    display: block;
+    width: calc(100% - 0%);
+}
+
+.mobile_nav {
+    display: none;
+}
+
+.mobile_nav_items{
+    background: var(--quaternary);
+    margin-top: 15px;
+}
+
+.mobile_nav_items a{
+    color: var(--secondary);
+    display: block;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 60px;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.mobile_nav_items a:hover{
+    background: var(--tertiary);
+}
+
 @media (min-width: 768px) {
     .hamburger {
         display: none;
     }
     .menu {
         display: flex;
+    }
+    .mobile_nav{
+        display: none;
+    }
+
+    .mobile_nav.is-active {
+        display: none;
     }
 }
