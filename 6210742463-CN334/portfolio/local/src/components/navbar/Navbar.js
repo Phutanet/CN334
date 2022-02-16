@@ -33,6 +33,15 @@ function Navbar() {
                 </button>
 
             </div>
+
+            <div className={'mobile_nav ' + toggle}>
+                <div class="mobile_nav_items">
+                    <a href='#' className='is-active'>Home</a>
+                    <a href='#' >Blog</a>
+                    <a href='#' >Sign out</a>
+                </div>
+            </div>
+            
         </nav> 
     )
 }
