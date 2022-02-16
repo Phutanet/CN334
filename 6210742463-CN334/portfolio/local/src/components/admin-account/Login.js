@@ -1,5 +1,5 @@
 import React from 'react';
-import './Login.css';
+import './Form.css';
 
 function Login() {
   return (
@@ -13,7 +13,7 @@ function Login() {
           <div class="password">
               <input type="password" class="user-pass" placeholder="Password" />
           </div>
-          <button title="login now" class="singin-btn">Sign in</button>
+          <button class="singin-btn">Sign in</button>
         </form>
     </div>
   )
