@@ -1,21 +1,19 @@
 import './App.css';
 import React, {useState} from 'react';
+import Navbar from './Components/Navbar';
+import Home from './Components/Home';
+import Contributions from './Components/Contributions';
+import Contact from './Components/Contact';
 
 function App() {
-  let [hello, setHello] = useState('')
 
-  const onClickButton = () => {
-    fetch('/api/hello')
-    .then(response => response.json())
-    .then(result => setHello(result.name))
-    .catch(err => alert(err))
-  }
   return (
-    <div>
-      <button onClick={onClickButton}>Click Me</button>
-      <div>{hello}</div>
+    <div className='main-wallpaper'>
+      <Navbar/>
+      <Home/>
+      <Contributions/>
+      <Contact/>
     </div>
-
   );
 }
 
