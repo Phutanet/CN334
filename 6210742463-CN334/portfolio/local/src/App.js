@@ -1,14 +1,18 @@
-import Navbar from './components/navbar/Navbar';
-import Login from './components/admin-account/Login';
-import CreateAccount from './components/admin-account/CreateAccount';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
+import Home from './components/navbar/Home'
+import Create from './components/project/Create'
 
-function App() {
+const App = () => {
+
   return (
-    <>
-    <Navbar />
-    <Login />
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' exact element={<Home />} />
+        <Route path='/create' element={<Create />} />
+      </Routes>
+    </Router>
   )
 }
 

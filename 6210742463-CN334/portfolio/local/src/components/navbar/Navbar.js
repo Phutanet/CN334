@@ -1,49 +1,74 @@
-import React, {useState} from 'react';
-import './Navbar.css';
+import React, { useState, useEffect } from 'react'
+import './Navbar.css'
+import DataContext from '../DataContext'
 
-function Navbar() {
+const Navbar = () => {
 
-    const [toggle, setToggle] = useState('')
+  const [loginPopup, setLoginPopup] = useState('')
+  const [loginAuth, setLoginAuth] = useState('Login')
 
-    const onClickIsActive = () => {
-        if (toggle === '') {
-            setToggle('is-active')
-        } else {
-            setToggle('')
-        }
-        console.log(toggle)
+  const onClickShow = () => {
+    if (loginPopup === '' && loginAuth === 'Login') {
+      setLoginPopup('show')
+    } else if (loginAuth === 'Logout') {
+      setLoginAuth('Login')
+    } else {
+      setLoginPopup('')
     }
-    
-    return (
-        <nav>
-            <div className='container'>
+  }
 
-                <h1>Portfolio</h1>
+  const onClickLogin = () => {
+    if (loginAuth === 'Login') {
+      setLoginAuth('Logout')
+      setLoginPopup('')
+    } else {
+      setLoginAuth('Login')
+    }
+  }
 
-                <div className='menu'>
-                    <a href='#' className='is-active'>Home</a>
-                    <a href='#' >Blog</a>
-                    <a href='#' >Sign out</a>
-                </div>
+  useEffect(() => {
+    console.log(loginAuth)
+  }, [loginAuth])
 
-                <button className={'hamburger ' + toggle} onClick={onClickIsActive}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+  return (
+    <div>
 
+      <DataContext.Provider value={loginAuth} />
+      
+      <nav>
+        <div className="logo">Portfolio</div>
+        <input type="checkbox" id="click" />
+        <label for="click" className="menu-btn">
+          <i className="fas fa-bars"></i>
+        </label>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#project">Project</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#" onClick={onClickShow}>{loginAuth}</a></li>
+        </ul>
+      </nav>
+
+
+      <div class={'modal ' + loginPopup} id="modal">
+        <div class="modal__wrapper">
+          <h3>Login</h3>
+          <form action="#">
+            <p>username</p>
+            <input type="text" />
+            <p>password</p>
+            <input type="text" />
+            <div class="btn-group">
+              <button type="submit" class="submit-btn" onClick={onClickLogin}>Login</button>
+              <button class="cancel-btn modal__close" onClick={onClickShow}>Cancel</button>
             </div>
+          </form>
+        </div>
+      </div>
 
-            <div className={'mobile_nav ' + toggle}>
-                <div class="mobile_nav_items">
-                    <a href='#' className='is-active'>Home</a>
-                    <a href='#' >Blog</a>
-                    <a href='#' >Sign out</a>
-                </div>
-            </div>
-            
-        </nav> 
-    )
+    </div>
+  )
 }
 
 export default Navbar;

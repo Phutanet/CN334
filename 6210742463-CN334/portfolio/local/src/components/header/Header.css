@@ -1,0 +1,74 @@
+#home{
+    height: 100vh;
+    min-height: 500px;
+    background: url(../../images/bg.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+  
+#home .inner-width{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+  
+#home .content{
+    width: 100%;
+    color: #fff;
+}
+  
+#home .content h1{
+    font-size: 60px;
+    margin-bottom: 60px;
+}
+  
+#home .content h1::after{
+    content: "A Designer";
+    animation: textanim 3s linear infinite;
+}
+  
+@keyframes textanim{
+    33%{
+      content: "A Developer";
+    }
+    66%{
+      content: "An Engineer";
+    }
+}
+  
+.sm a{
+    color: #fff;
+    font-size: 22px;
+    margin: 0 10px;
+    transition: .2s linear;
+}
+  
+.sm a:hover{
+    color: #f9004d;
+}
+  
+#home .buttons{
+    margin-top: 60px;
+}
+  
+#home .buttons a{
+    display: inline-block;
+    margin: 15px 30px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    width: 180px;
+    border: 1px solid #f9004d;
+    padding: 14px 0;
+    border-radius: 6px;
+    transition: .2s linear;
+}
+  
+#home .buttons a:hover,
+#home .buttons a:nth-child(2)
+{
+    background-color: #f9004d;
+    color: #fff;
+}
