@@ -1,26 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-import {useState, useContext} from 'react';
+import React from "react";
 
-function App() {
-  const [name, setitem] = useState('');
-  
-  
-  const api = async () => {
-    await fetch(' http://localhost:8000/api/hello')
-      .then((res) => res.json())
-      .then(result => setitem(result.name))
-      .catch(err => alert(err))
-    
-      };
-  return (
-    <div>
-      <button onClick={api}> Show api</button>
-      <div>{name}</div>
-    </div>
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-    
-  );
-}
+import About from "./components/page/About";
+import Experience from "./components/page/Experience";
+import Home from "./components/page/Home";
+import Contact from "./components/page/Contact";
+import Navbar from "./components/UI/Navbar";
+import Footer from "./components/page/Footer";
+
+const App = () => {
+    return (
+        <Router>
+            <Navbar />
+            <main>
+                <Routes>
+                    <Route exact path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/experience" element={<Experience />} />
+                    <Route path="/contact" element={<Contact />} />
+                </Routes>
+            </main>
+            <Footer />
+        </Router>
+    );
+};
 
 export default App;
