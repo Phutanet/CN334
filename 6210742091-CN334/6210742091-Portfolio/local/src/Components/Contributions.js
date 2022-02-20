@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import './Contributions.css'
 import axios from 'axios'
 
-import blogJPG from '../Image/blog.jpg'
-import gitJPG from '../Image/git.png'
+import taskIMG from '../Image/gitlogo3.png'
 
 class Contributions extends Component {
 
@@ -159,16 +158,16 @@ class Contributions extends Component {
             table = this.state.projects.map((i) => {
                 return (
                     <article>
-                        <img src={gitJPG} />
+                        <img src={taskIMG}/>
                         <div className='text'>
                             <h3>{i.nameProject}</h3>
                             <p><a href={i.linkProject}>Read More</a></p>
                             <button className='up-btn' onClick={(e) => {
                                 this.updateProject(e, i.id)
-                            }}>update</button>
+                            }}>Update</button>
                             <button className='del-btn' onClick={(e) => {
                                 this.deleteProject(e, i.id)
-                            }}>delete</button>
+                            }}>Delete</button>
                         </div>
                     </article>
                 )
@@ -177,14 +176,12 @@ class Contributions extends Component {
 
         return (
             <div className='container' id='project'>
-                <h1 className='blog-title'>Project</h1>
+                <h1 className='blog-title'>Contributions</h1>
                 <main className='grid'>
                     <article>
-                        <img src={blogJPG} />
                         <div className='text'>
-                            <h3>Project</h3>
-                            <p>Create More</p>
-                            <button className='c-btn' onClick={this.onCreateMore}>create</button>
+                            <h3>Create Task</h3>
+                            <button className='c-btn' onClick={this.onCreateMore}>Create</button>
                         </div>
                     </article>
 
@@ -194,11 +191,11 @@ class Contributions extends Component {
 
                 <div className={'modal ' + this.state.modalCreateShow} id="modal">
                     <div className="modal__wrapper">
-                        <h3>Project</h3>
+                        <h3>Create Task</h3>
                         <form onSubmit={this.saveProject}>
-                            <p>Project Name</p>
+                            <p>Topic</p>
                             <input required type="text" onChange={this.handleInput} value={this.state.nameProject} name='nameProject' />
-                            <p>Project Link</p>
+                            <p>Description or Source</p>
                             <input required type="text" onChange={this.handleInput} value={this.state.linkProject} name='linkProject' />
                             <div class="btn-group">
                                 <button type="submit" class="submit-btn">Submit</button>
@@ -210,11 +207,11 @@ class Contributions extends Component {
 
                 <div className={'modal ' + this.state.modalShow} id="modal">
                     <div className="modal__wrapper">
-                        <h3>Update Project</h3>
+                        <h3>Update Task</h3>
                         <form onSubmit={this.onSubmitUpdateProject}>
-                            <p>Project Name</p>
+                            <p>Topic</p>
                             <input required type="text" onChange={this.handleInput} value={this.state.nameProject} name='nameProject' />
-                            <p>Project Link</p>
+                            <p>Description or Source</p>
                             <input required type="text" onChange={this.handleInput} value={this.state.linkProject} name='linkProject' />
                             <div class="btn-group">
                                 <button type="submit" class="submit-btn" onClick={this.onReadMore}>Submit</button>

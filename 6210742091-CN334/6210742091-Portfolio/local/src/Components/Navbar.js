@@ -7,9 +7,9 @@ const Navbar = () => {
             <nav>
                 <h2 className="logo">Portfo<span>lio</span></h2>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Contributions</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Contributions">Contributions</a></li>
+                    <li><a href="#Contact">Contact</a></li>
                 </ul>
             </nav>
         </div>

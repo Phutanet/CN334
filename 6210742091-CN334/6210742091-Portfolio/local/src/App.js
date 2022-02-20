@@ -13,7 +13,7 @@ function App() {
         <div className="main-wallpaper">
             <Navbar />
             <Home />
-            <Contributions/>
+            <Contributions />
             <Contact />
         </div>
     );
