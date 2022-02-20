@@ -16,16 +16,24 @@ const About = () => {
             </div>
             <div className="a-right">
                 <h1 className="a-title">About ME</h1>
-                <p className="a-sub">
-                    I was very proud of my nickname throughout high school but
-                    today- I couldn’t be any different to what my nickname was.
+                <p className="a-sub">Why Software Dev?</p>
+                <p className="a-desc">
+                    Software Developer skilled at technical leadership,
+                    communication and presentations. Experienced in full project
+                    life cycle from design to implementation to integration.
+                    Ability to quickly learn and master new technologies and
+                    working in both team and self-directed settings.
+                </p>
+                <p className="a-sub">Education</p>
+                <p className="a-desc">
+                    2013 - 2018 :
+                    Bodindecha Sing Singhaseni 2 School
+                    Intensive English Program (IEP)
                 </p>
                 <p className="a-desc">
-                    Before he moved to the inner city, he had always believed
-                    that security complexes were psychological. There were three
-                    sphered rocks congregating in a cubed room. The teens
-                    wondered what was kept in the red shed on the far edge of
-                    the school grounds.
+                    2019 - NOW :
+                    Thammasat University
+                    Bachelor of Software Engineering
                 </p>
             </div>
         </div>
