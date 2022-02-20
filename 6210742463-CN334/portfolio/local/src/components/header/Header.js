@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Header.css'
+import Resume from '../../resume/Resume.pdf'
 
 
 const Header = () => {
@@ -17,7 +18,7 @@ const Header = () => {
                     </div>
                     <div class="buttons">
                         <a href="#about">About me</a>
-                        <a href="#">Download CV</a>
+                        <a href={Resume} download>Download Resume</a>
                     </div>
                 </div>
             </div>

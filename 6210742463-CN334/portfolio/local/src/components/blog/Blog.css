@@ -61,6 +61,31 @@
     margin-top: 20px;
 }
 
+.text button.del-btn{
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: black;
+    padding: 10px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.text button.c-btn{
+    background: lightgreen;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    padding: 10px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 39px;
+    margin-bottom: 39px;
+}
+
 .text button:hover{
     box-shadow: 2px 2px 26px 0px rgba(0,0,0,0.3);
 }
@@ -182,4 +207,13 @@
 .submit-btn:hover,
 .cancel-btn:hover{
     box-shadow: 2px 2px 26px 0px rgba(0,0,0,0.3);
+}
+
+.modal.active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.modal.active .modal__wrapper {
+	transform: rotateX(0);
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.css'
-
+import Resume from '../../resume/Resume.pdf'
 
 const Footer = () => {
 
@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="footer-col">
             <h4>Download</h4>
             <ul>
-              <li><a href="#">Resume</a></li>
+              <li><a href={ Resume } download>Resume</a></li>
               <li><a href="#">CV</a></li>
             </ul>
           </div>
