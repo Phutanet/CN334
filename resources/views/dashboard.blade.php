@@ -176,6 +176,7 @@
             font-weight: 600;
             cursor: pointer;
             margin: 2px;
+            text-decoration: none;
         }
         .del_btn{
             display: block;
@@ -188,6 +189,20 @@
             font-weight: 600;
             cursor: pointer;
         }
+        .twitter-share-button {
+            margin-top: 2px;
+            display: block;
+            background: lightblue;
+            border-radius: 20px;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            width: 91%;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
         @media screen and (max-width: 780px) {
             .sidebar{
                 display: none;
@@ -310,7 +325,7 @@
                         <button type="submit" name="delete" formmethod="POST" class="del_btn">Delete</button>
                             {{ csrf_field() }}
                     </form>
-                    <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=small&appId=480223613510926&width=61&height=20" width="61" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{$task->description}}" data-size="large">Tweet</a>
                 </article>
             @endforeach
         </main>

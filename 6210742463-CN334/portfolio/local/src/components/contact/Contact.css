@@ -1,0 +1,52 @@
+.section-title {
+    font-size: 70px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact-info{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+  
+.contact-info .item{
+    width: 300px;
+    height: 160px;
+    background-color: #353b48;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .3s linear;
+}
+  
+.contact-info i{
+    display: block;
+    font-size: 40px;
+    line-height: 120px;
+    height: 100px;
+}
+  
+.contact-info .item:hover{
+    background-color: #f9004d;
+}
+
+@media (max-width: 920px) {
+    .contact-info{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info .item{
+        width: 250px;
+        margin-bottom: 20px;
+        margin-left: -86px;
+        
+    }
+
+}
