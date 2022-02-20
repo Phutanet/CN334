@@ -200,9 +200,9 @@ class Experience extends Component {
                             <input required type="text" onChange={this.handleInput} value={this.state.nameProject} name='nameProject' />
                             <p>Project Link</p>
                             <input required type="text" onChange={this.handleInput} value={this.state.linkProject} name='linkProject' />
-                            <div class="btn-group">
-                                <button type="submit" class="submit-btn">Submit</button>
-                                <a class="cancel-btn modal__close" onClick={this.onCreateMore}>Cancel</a>
+                            <div className="btn-group">
+                                <button type="submit" className="submit-btn">Submit</button>
+                                <a className="cancel-btn modal__close" onClick={this.onCreateMore}>Cancel</a>
                             </div>
                         </form>
                     </div>
@@ -216,9 +216,9 @@ class Experience extends Component {
                             <input required type="text" onChange={this.handleInput} value={this.state.nameProject} name='nameProject' />
                             <p>Project Link</p>
                             <input required type="text" onChange={this.handleInput} value={this.state.linkProject} name='linkProject' />
-                            <div class="btn-group">
-                                <button type="submit" class="submit-btn" onClick={this.onReadMore}>Submit</button>
-                                <a class="cancel-btn modal__close" onClick={this.onReadMore}>Cancel</a>
+                            <div className="btn-group">
+                                <button type="submit" className="submit-btn" onClick={this.onReadMore}>Submit</button>
+                                <a className="cancel-btn modal__close" onClick={this.onReadMore}>Cancel</a>
                             </div>
                         </form>
                     </div>
