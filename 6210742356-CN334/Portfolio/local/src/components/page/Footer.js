@@ -101,22 +101,22 @@ const Footer = () => {
                         <ul class="social-icons">
                             <li>
                                 <a class="facebook" href="#">
-                                    <i class="fa fa-facebook"></i>
+                                    <i class="fab fa-facebook"></i>
                                 </a>
                             </li>
                             <li>
                                 <a class="twitter" href="#">
-                                    <i class="fa fa-twitter"></i>
+                                    <i class="fab fa-twitter"></i>
                                 </a>
                             </li>
                             <li>
                                 <a class="dribbble" href="#">
-                                    <i class="fa fa-dribbble"></i>
+                                    <i class="fab fa-dribbble"></i>
                                 </a>
                             </li>
                             <li>
                                 <a class="linkedin" href="#">
-                                    <i class="fa fa-linkedin"></i>
+                                    <i class="fab fa-linkedin"></i>
                                 </a>
                             </li>
                         </ul>
