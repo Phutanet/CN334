@@ -1,3 +1,219 @@
-.contributions-section{
-    height: 100vh;
+.blog-title {
+    font-size: 70px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.grid{
+    margin: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    align-items: center;
+}
+
+.grid > article{
+    background: #eee5e9;
+    border: none;
+    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    text-align: center;
+    width: 250px;
+    transition: transform .3s;
+    margin-left: 60px;
+}
+
+.grid > article:hover {
+    transform: translateY(5px);
+    box-shadow: 2px 2px 26px 0px rgba(0,0,0,0.3);
+}
+
+.grid > article img{
+    width: 100%;
+    height: 150px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.text {
+    padding: 0 20px 20px;
+}
+
+.text h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0 20px 20px;
+}
+
+.text p {
+    margin-bottom: 20px;
+}
+
+.text button.up-btn{
+    background: #f9004d;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.text button.del-btn{
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: black;
+    padding: 10px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.text button.c-btn{
+    background: lightgreen;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    padding: 10px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 39px;
+    margin-bottom: 39px;
+}
+
+.text button:hover{
+    box-shadow: 2px 2px 26px 0px rgba(0,0,0,0.3);
+}
+
+@media (max-width : 768px) {
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width : 500px) {
+    .grid{
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 5px;
+    }
+
+    .grid > article{
+        text-align: center;
+    }
+
+    .modal {
+        margin-right: 80px;
+    }
+
+    .modal__wrapper {
+        width: 300px;
+    }
+}
+
+.modal {
+	position: fixed;
+	background: rgba(0, 0, 0, .7);
+	inset: 0;
+	display: flex;
+	justify-content: center;
+	transition: .2s;
+	opacity: 0;
+	visibility: hidden;
+	perspective: 1000px;
+	padding: 1rem;
+	overflow-y: auto;
+}
+.modal.show {
+	opacity: 1;
+	visibility: visible;
+}
+.modal__wrapper {
+	max-width: 300px;
+	padding: 1.25rem;
+	background: white;
+	border-radius: 5px;
+	transition: .2s;
+	transition-delay: .1s;
+	transform: rotateX(-45deg);
+	transform-style: preserve-3d;
+	margin: auto;
+}
+.modal.show .modal__wrapper {
+	transform: rotateX(0);
+}
+.modal__wrapper h3 {
+	font-size: 1.75rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+
+.p-title {
+    text-align: center;
+}
+
+.modal__wrapper p {
+	line-height: 150%;
+	margin-bottom: .75rem;
+}
+.modal__wrapper input {
+	width: 100%;
+	font-size: 1rem;
+	padding: .75rem 1.5rem;
+	outline: none;
+	border-radius: 5px;
+	margin-bottom: .75rem;
+	border: 1px solid darkgray;
+	transition: .2s;
+}
+.modal__wrapper input:focus {
+	box-shadow: 0 0 0 1px #f9004d;
+}
+
+.modal__wrapper img {
+    width: 100%;
+    height: 150px;
+}
+.btn-group {
+	display: flex;
+	grid-gap: .75rem;
+    justify-content: center;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 10px 40px 10px 40px;
+    background-color: #f9004d;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.cancel-btn {
+    margin-top: 20px;
+    padding: 10px 35px 10px 35px;
+    border: 1px solid #f9004d;
+    background-color: white;
+    color: #f9004d;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover,
+.cancel-btn:hover{
+    box-shadow: 2px 2px 26px 0px rgba(0,0,0,0.3);
+}
+
+.modal.active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.modal.active .modal__wrapper {
+	transform: rotateX(0);
 }
