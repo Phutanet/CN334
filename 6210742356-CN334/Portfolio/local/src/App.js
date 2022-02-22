@@ -9,20 +9,26 @@ import Contact from "./components/page/Contact";
 import Navbar from "./components/UI/Navbar";
 import Footer from "./components/page/Footer";
 
+// Redux
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 const App = () => {
     return (
-        <Router>
-            <Navbar />
-            <main>
-                <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route exact path="/about" element={<About />} />
-                    <Route exact path="/experience" element={<Experience />} />
-                    <Route exact path="/contact" element={<Contact />} />
-                </Routes>
-            </main>
-            <Footer />
-        </Router>
+        <Provider store={store}>
+            <Router>
+                <Navbar />
+                <main>
+                    <Routes>
+                        <Route exact path="/" element={<Home />} />
+                        <Route exact path="/about" element={<About />} />
+                        <Route exact path="/experience" element={<Experience />} />
+                        <Route exact path="/contact" element={<Contact />} />
+                    </Routes>
+                </main>
+                <Footer />
+            </Router>
+        </Provider>
     );
 };
 
