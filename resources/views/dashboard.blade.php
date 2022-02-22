@@ -325,7 +325,18 @@
                         <button type="submit" name="delete" formmethod="POST" class="del_btn">Delete</button>
                             {{ csrf_field() }}
                     </form>
+<<<<<<< Updated upstream
                     <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{$task->description}}" data-size="large">Tweet</a>
+=======
+<<<<<<< Updated upstream
+
+	                <!-- twiter share button ข้อมูลที่จะ tweet อยู่ใน text -->
+                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{$task->description}}" data-size="large">Share Tweet</a>
+=======
+                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{$task->description}}" data-size="large">Tweet</a>
+                    <a class="fb-share-button" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fdashboard&amp;src=sdkpreparse"> share Face </a>
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
                 </article>
             @endforeach
         </main>
