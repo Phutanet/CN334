@@ -328,6 +328,11 @@
 
 	                <!-- twiter share button ข้อมูลที่จะ tweet อยู่ใน text -->
                     <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{$task->description}}" data-size="large">Share Tweet</a>
+                    <!-- facebook share button ข้อมูลที่จะ post อยู่ใน u -->
+                    <a class="fb-share-button" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fdashboard&amp;src=sdkpreparse"> Share Face </a>
+
+
+
                 </article>
             @endforeach
         </main>
