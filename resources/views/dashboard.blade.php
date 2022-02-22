@@ -325,7 +325,7 @@
                         <button type="submit" name="delete" formmethod="POST" class="del_btn">Delete</button>
                             {{ csrf_field() }}
                     </form>
-                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{$task->description}}" data-size="large">Tweet</a>
+                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text={{$task->description}}" data-size="large">Share Tweet</a>
                 </article>
             @endforeach
         </main>
