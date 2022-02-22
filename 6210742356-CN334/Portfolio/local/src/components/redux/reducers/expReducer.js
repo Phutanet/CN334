@@ -12,12 +12,16 @@ const initialState = {
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case SET_MODALSHOW:
+        case CLEAR_STATE:
+            return {
+                initialState
+            }
+        case SET_MODAL_SHOW:
             return {
                 ...state,
                 modalShow: action.payload
             }
-        case SET_MODALCREATESHOW:
+        case SET_MODAL_CREATESHOW:
             return {
                 ...state,
                 modalCreateShow: action.payload
