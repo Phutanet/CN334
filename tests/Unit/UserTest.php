@@ -2,17 +2,27 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class UserTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
-    public function test_example()
+
+    public function test_login_form()
     {
-        $this->assertTrue(true);
+        $resp = $this->get('/login');
+
+        $resp->assertStatus(200);
+    }
+
+    public function test_register_form()
+    {
+        $resp = $this->get('/register');
+
+        $resp->assertStatus(200);
+    }
+
+    public function test_create_user()
+    {
+        $this->assertTrue(1 == 1);
     }
 }
