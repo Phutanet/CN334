@@ -20,9 +20,4 @@ class UserTest extends TestCase
 
         $resp->assertStatus(200);
     }
-
-    public function test_create_user()
-    {
-        $this->assertTrue(1 == 1);
-    }
 }
