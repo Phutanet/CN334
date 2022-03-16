@@ -2,17 +2,21 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 
 class TaskTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
-    public function test_example()
+
+    use RefreshDatabase, WithFaker;
+
+    public function test_tasks_database_has_expected_columns() 
     {
-        $this->assertTrue(true);
+        $this->assertTrue(
+            Schema::hasColumns(
+                'tasks', ['id', 'description', 'user_id', 'created_at', 'updated_at']
+            ));
     }
 }
