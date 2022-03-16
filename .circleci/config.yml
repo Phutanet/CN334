@@ -52,3 +52,7 @@ jobs:
       - run:
           name: "Run Integration Tests"
           command: ./vendor/bin/phpunit tests/Feature
+
+      - run:
+          name: "Run User Acceptance Tests"
+          command: ./vendor/bin/phpunit tests/Feature/UAT
