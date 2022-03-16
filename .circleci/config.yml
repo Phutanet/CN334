@@ -50,5 +50,5 @@ jobs:
           command: ./vendor/bin/phpunit tests/Unit
 
       - run:
-          name: "Run Intregration Tests"
+          name: "Run Integration Tests"
           command: ./vendor/bin/phpunit tests/Feature

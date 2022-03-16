@@ -39,7 +39,7 @@ class TasksController extends Controller
         }           
         else {
              return redirect('/dashboard');
-         }            	
+        }            	
     }
 
     public function update(Request $request, Task $task)

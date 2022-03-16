@@ -14,17 +14,18 @@ class TaskTest extends TestCase
     use RefreshDatabase, WithFaker;
     
     public function test_create_task_successfully() {
+
         $user = User::factory()->create();
         $this->actingAs($user, 'sanctum');
 
         $taskData = [
-            "description" => "aa"
+            "description" => "example"
         ];
 
         $this->json('POST', '/task', $taskData, ['Accept' => 'application/json'])
             ->assertStatus(201)
             ->assertJson([
-                "description" => "aa",
+                "description" => "example",
                 "user_id" => $user->id,
                 'message' => 'create success'
             ]);
