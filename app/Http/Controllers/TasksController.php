@@ -26,7 +26,8 @@ class TasksController extends Controller
     	$task->description = $request->description;
     	$task->user_id = auth()->user()->id;
     	$task->save();
-    	return redirect('/dashboard'); 
+
+        return response(['description' => $request->description, 'user_id' => auth()->user()->id, 'message' => 'create success'], 201);
     }
 
     public function edit(Task $task)

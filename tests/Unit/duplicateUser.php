@@ -6,11 +6,6 @@ use PHPUnit\Framework\TestCase;
 
 class duplicateUser extends TestCase
 {
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
     public function test_user_duplication()
     {
         $user1 = User::make([
