@@ -45,6 +45,13 @@ jobs:
           command: php artisan key:generate
       
       - run:
+          name: "Install Dusk and Update Chrome Drivers"
+          command: |
+            composer require --dev laravel/dusk:"^6.22"
+            composer require --dev staudenmeir/dusk-updater
+            php artisan dusk:update --detect
+      
+      - run:
           name: "Start Chrome Driver"
           command: ./vendor/laravel/dusk/bin/chromedriver-linux
           background: true
@@ -62,14 +69,7 @@ jobs:
       - run:
           name: "Run Integration Tests"
           command: ./vendor/bin/phpunit tests/Feature
-      
-      - run:
-          name: "Install Dusk and Update Chrome Drivers"
-          command: |
-            composer require --dev laravel/dusk:"^6.22"
-            composer require --dev staudenmeir/dusk-updater
-            php artisan dusk:update --detect
-            
+    
       - run:
           name: "Run User Acceptance Test and Business Acceptance Tests"
           command: php artisan dusk
