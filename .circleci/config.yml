@@ -43,6 +43,15 @@ jobs:
       - run:
           name: "Generate App key"
           command: php artisan key:generate
+
+      # run tests with phpunit
+      - run:
+          name: "Run Unit Tests"
+          command: ./vendor/bin/phpunit tests/Unit
+
+      - run:
+          name: "Run Integration Tests"
+          command: ./vendor/bin/phpunit tests/Feature
       
       - run:
           name: "Install Dusk and Update Chrome Drivers"
@@ -60,16 +69,7 @@ jobs:
           name: "Run Laravel Server"
           command: php artisan serve
           background: true
-
-      # run tests with phpunit
-      - run:
-          name: "Run Unit Tests"
-          command: ./vendor/bin/phpunit tests/Unit
-
-      - run:
-          name: "Run Integration Tests"
-          command: ./vendor/bin/phpunit tests/Feature
-    
+      
       - run:
           name: "Run User Acceptance Test and Business Acceptance Tests"
-          command: php artisan dusk
+          command: ./vendor/bin/phpunit tests/Browser/BAT
