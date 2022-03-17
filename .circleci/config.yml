@@ -54,26 +54,26 @@ jobs:
           command: ./vendor/bin/phpunit tests/Feature
       
       - run:
-	      name: "Install Dusk and Update Chrome Drivers"
-	      command: |
-	        composer require --dev laravel/dusk:"^4.0"
-	        composer require --dev staudenmeir/dusk-updater
-	        php artisan dusk:update --detect
+	        name: "Install Dusk and Update Chrome Drivers"
+	        command: |
+	          composer require --dev laravel/dusk:"^4.0"
+	          composer require --dev staudenmeir/dusk-updater
+	          php artisan dusk:update --detect
       
       - run:
-	      name: "Start Chrome Driver"
-	      command: ./vendor/laravel/dusk/bin/chromedriver-linux
-	      background: true
+          name: "Start Chrome Driver"
+          command: ./vendor/laravel/dusk/bin/chromedriver-linux
+          background: true
       
       - run:
-	      name: "Run Laravel Server"
-	      command: php artisan serve
-	      background: true
+	        name: "Run Laravel Server"
+	        command: php artisan serve
+	        background: true
       
       - run:
-	      name: "Run User Acceptance Tests"
-	      command: ./vendor/bin/phpunit tests/Browser/UAT
+	        name: "Run User Acceptance Tests"
+	        command: ./vendor/bin/phpunit tests/Browser/UAT
       
       - run:
-	      name: "Run Business Acceptance Tests"
-	      command: ./vendor/bin/phpunit tests/Browser/BAT
+	        name: "Run Business Acceptance Tests"
+	        command: ./vendor/bin/phpunit tests/Browser/BAT
