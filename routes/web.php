@@ -14,6 +14,7 @@ use App\Http\Controllers\TasksController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Route > Controler(function) > View
 Route::get('/', function () {
     return view('welcome');
 });

@@ -6,12 +6,13 @@ version: 2
 jobs:
   build:
     docker:
-      # Specify the version you desire here
+      # Specify the PHP version for fit to your PHP version
       - image: circleci/php:8.0-node-browsers
 
     steps:
       - checkout
 
+        #Setup Environment
       - run:
           name: "Prepare Environment"
           command: |
@@ -31,6 +32,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
+        # Command for CircleCI install package, that CircleCI dont have
       - run:
           name: "Install Dependencies"
           command: composer install -n --prefer-dist
@@ -39,7 +41,8 @@ jobs:
           key: v1-dependencies-{{ checksum "composer.json" }}
           paths:
             - ./vendor
-
+        
+        # Set APP_KEY in .env file on CircleCI
       - run:
           name: "Generate App key"
           command: php artisan key:generate
@@ -53,6 +56,9 @@ jobs:
           name: "Run Integration Tests"
           command: ./vendor/bin/phpunit tests/Feature
       
+
+      # Dusk like Attention for test in Laravel
+      # Update Chrome Drivers (Update browser on circleCI), update for support Dusk
       - run:
           name: "Install Dusk and Update Chrome Drivers"
           command: |
@@ -65,11 +71,14 @@ jobs:
           command: ./vendor/laravel/dusk/bin/chromedriver-linux
           background: true
 
+      # circleCI run project(back-ground) for open Server
       - run:
           name: "Run Laravel Server"
           command: php artisan serve
           background: true
       
+      
+      # circleCI test project(fore-ground,GUI) for test Acceptance
       - run:
           name: "Run Business Acceptance Tests"
           command: ./vendor/bin/phpunit tests/Browser/BAT

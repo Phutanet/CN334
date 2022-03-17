@@ -14,7 +14,7 @@ class TasksController extends Controller
     }
     public function add()
     {
-    	return view('add');
+    	return view('add'); //return add.blade.php file in View
     }
 
     public function create(Request $request)
@@ -33,7 +33,7 @@ class TasksController extends Controller
     public function edit(Task $task)
     {
 
-    	if (auth()->user()->id == $task->user_id)
+    	if (auth()->user()->id == $task->user_id) //check in Database
         {            
                 return view('edit', compact('task'));
         }           
