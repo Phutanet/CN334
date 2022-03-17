@@ -71,5 +71,9 @@ jobs:
           background: true
       
       - run:
-          name: "Run User Acceptance Test and Business Acceptance Tests"
+          name: "Run Business Acceptance Tests"
           command: ./vendor/bin/phpunit tests/Browser/BAT
+      
+      - run:
+          name: "Run User Acceptance Tests"
+          command: ./vendor/bin/phpunit tests/Browser/UAT

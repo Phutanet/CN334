@@ -13,6 +13,9 @@ use App\Models\User;
 
 class RegisterTest extends DuskTestCase
 {
+
+    use RefreshDatabase, WithFaker;
+
     public function test_user_can_register()
     {
         $this->browse(function ($browser) {
