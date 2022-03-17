@@ -56,7 +56,7 @@ jobs:
       - run:
           name: "Install Dusk and Update Chrome Drivers"
           command: |
-            composer require --dev laravel/dusk
+            composer require --dev laravel/dusk:"^6.22"
             composer require --dev staudenmeir/dusk-updater
             php artisan dusk:update --detect
       
@@ -71,9 +71,5 @@ jobs:
           background: true
       
       - run:
-          name: "Run Business Acceptance Tests"
-          command: ./vendor/bin/phpunit tests/Browser/BAT
-      
-      - run:
-          name: "Run User Acceptance Tests"
-          command: ./vendor/bin/phpunit tests/Browser/UAT
+          name: "Run User Acceptance Test and Business Acceptance Tests"
+          command: php artisan dusk
