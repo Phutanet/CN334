@@ -125,7 +125,7 @@
                             <input type="checkbox" id="remember_me" name="remember">Remember Me
                         </div>
                         <div class="form-group">
-                                <button type="submit" class="btn float-right login_btn">{{ __('Log in') }}</button>
+                                <button type="submit" class="btn float-right login_btn">Log in</button>
                         </div>
                     </form>
                 </div>
