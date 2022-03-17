@@ -43,6 +43,16 @@ jobs:
       - run:
           name: "Generate App key"
           command: php artisan key:generate
+      
+      - run:
+          name: "Start Chrome Driver"
+          command: ./vendor/laravel/dusk/bin/chromedriver-linux
+          background: true
+
+      - run:
+          name: "Run Laravel Server"
+          command: php artisan serve
+          background: true
 
       # run tests with phpunit
       - run:
@@ -59,17 +69,7 @@ jobs:
             composer require --dev laravel/dusk:"^6.22"
             composer require --dev staudenmeir/dusk-updater
             php artisan dusk:update --detect
-      
-      - run:
-          name: "Start Chrome Driver"
-          command: ./vendor/laravel/dusk/bin/chromedriver-linux
-          background: true
-
-      - run:
-          name: "Run Laravel Server"
-          command: php artisan serve
-          background: true
-      
+            
       - run:
           name: "Run User Acceptance Test and Business Acceptance Tests"
           command: php artisan dusk
