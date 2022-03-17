@@ -13,7 +13,8 @@ class TaskTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
     
-    public function test_create_task_successfully() {
+    public function test_create_task_successfully() 
+    {
 
         $user = User::factory()->create();
         $this->actingAs($user, 'sanctum');
