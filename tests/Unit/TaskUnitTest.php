@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 
-class TaskTest extends TestCase
+class TaskUnitTest extends TestCase
 {
 
     use RefreshDatabase, WithFaker;
