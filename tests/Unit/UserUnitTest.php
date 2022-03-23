@@ -6,14 +6,14 @@ use Tests\TestCase;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-
 use App\Models\User;
+
 
 class UserUnitTest extends TestCase
 {
-    
     use RefreshDatabase, WithFaker;
 
+    //ทดสอบว่าตารางของ User Class มี Attribute ที่ Expected ไว้หรือไม่
     public function test_user_database_has_expected_columns()
     {
         $this->assertTrue(
@@ -24,20 +24,12 @@ class UserUnitTest extends TestCase
             ));
     }
 
-    public function test_user_duplication()
-    {
-        $user1 = User::make([
-            'name' => 'phutanet', //attribute => value
-            'email' => 'ice.test1@gmail.com'
-        ]);
+    //ทดสอบว่า Email Attribute มีค่าซ้ำกันหรือไม่
 
-        $user2 = User::make([
-            'name' => 'phutanet',
-            'email' => 'ice.test2@gmail.com'
-        ]);
-        
-        $this->assertTrue($user1->email != $user2->email);
-    }
+    //ทดสอบการรองรับภาษาไทยของ Email Attribute
+
+    //ทดสอบ Name Attribute ห้ามมี Character เกิน 40 ตัว
+
     
 }
 
