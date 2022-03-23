@@ -57,7 +57,7 @@ jobs:
 
       - run:
           name: "Run Seeder"
-          command: ./vendor/bin/phpunit database/seeders/TodoSeeder.php
+          command: php artisan db:seed --class=TaskSeeder
 
 
       # run tests with phpunit
