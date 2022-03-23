@@ -21,8 +21,24 @@ class TaskUnitTest extends TestCase
     }
 
     //Test Expected Schema Description Correct
+    public function test_tasks_database_has_expected_description()
+    {
+        $this->assertTrue(
+            Schema::hasColumn(
+                'tasks', 'description'
+            )
+        );
+    }
 
     //Test Expected Schema User_id Correct
+    public function test_tasks_database_has_expected_user_id()
+    {
+        $this->assertTrue(
+            Schema::hasColumn(
+                'tasks', 'user_id'
+            )
+        );
+    }
 
     //Test การรองรับภาษาไทยของ Description Attribute ของ Schema
 
