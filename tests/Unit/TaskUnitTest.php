@@ -7,18 +7,12 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 
+use App\Models\Task;
+use App\Models\User;
 
 class TaskUnitTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
-
-    public function test_tasks_database_has_expected_columns() 
-    {
-        $this->assertTrue(
-            Schema::hasColumns(
-                'tasks', ['id', 'description', 'user_id', 'created_at', 'updated_at']
-            ));
-    }
 
     //Test Expected Schema Description Correct
     public function test_tasks_database_has_expected_description()
@@ -41,10 +35,37 @@ class TaskUnitTest extends TestCase
     }
 
     //Test การรองรับภาษาไทยของ Description Attribute ของ Schema
+    public function test_tasks_has_support_thai_description()
+    {
+        $task = new Task();
+        $task->description = 'สวัสดีสมาชิกชมรมคนชอบ';
+
+        $this->assertEquals($task->description, 'สวัสดีสมาชิกชมรมคนชอบ');
+    }
 
     //Test การรองรับภาษาอังกฤษของ Description Attribute ของ Schema
+    public function test_tasks_has_support_english_description()
+    {
+        $task = new Task();
+        $task->description = 'Hello';
+
+        $this->assertEquals($task->description, 'Hello');
+    }
 
     //Test การกรอกตัวเลขติดลบของ user_id Attribute ของ Task Schema
+    public function test_user_id_in_task_is_nagative_number()
+    {
+        $task = new Task();
+        $task->user_id = -1;
+
+        $this->assertTrue($task->user_id < 0);
+    }
 
     //Test Description Attribute ของ Schema ว่าเป็นค่า NULL ได้ไหม
+    public function test_task_is_null()
+    {
+        $task = new Task();
+
+        $this->assertEquals($task->description, null);
+    }
 }
