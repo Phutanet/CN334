@@ -25,11 +25,32 @@ class UserUnitTest extends TestCase
     }
 
     //ทดสอบว่า Email Attribute มีค่าซ้ำกันหรือไม่
+    public function test_email_duplication()
+    {
+        $user = User::all();
+        $setUser = array();
 
-    //ทดสอบการรองรับภาษาไทยของ Email Attribute
+        foreach ($user as $i) {
+            if (in_array($i->email, $setUser)){
+                $this->assertTrue(false);
+            }
+            array_push($setUser,$i->email);
+        }
+        $this->assertTrue(true);
+    }
 
     //ทดสอบ Name Attribute ห้ามมี Character เกิน 40 ตัว
+    public function test_name_attribute_less_than_41_char()
+    {
+        $user = User::all();
 
-    
+        foreach ($user as $i) {
+            if ($i->name <= 40) {
+                continue;
+            }
+            $this->assertTrue(false);
+        }
+        $this->assertTrue(true);
+    }
 }
 
