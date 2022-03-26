@@ -56,8 +56,30 @@ class TaskUnitTest extends TestCase
     }
 
     //Test การกรอกตัวเลขติดลบของ user_id Attribute ของ Task Schema
-    
+    public function test_user_id_in_task_is_not_nagative_number()
+    {
+        $task = Task::all();
+
+        foreach ($task as $i) {
+            if ($i->user_id > 0) {
+                continue;
+            }
+            $this->assertTrue(false);
+        }
+        $this->assertTrue(true);
+    }
 
     //Test Description Attribute ของ Schema ว่าเป็นค่า NULL ได้ไหม
-    
+    public function test_task_is_null()
+    {
+        $task = Task::all();
+
+        foreach ($task as $i) {
+            if ($i->description != null) {
+                continue;
+            }
+            $this->assertTrue(false);
+        }
+        $this->assertTrue(true);
+    }
 }
