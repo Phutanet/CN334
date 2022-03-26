@@ -8,7 +8,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 
 use App\Models\Task;
-use App\Models\User;
 
 class TaskUnitTest extends TestCase
 {
@@ -39,6 +38,8 @@ class TaskUnitTest extends TestCase
     {
         $task = new Task();
         $task->description = 'สวัสดีสมาชิกชมรมคนชอบ';
+        $task->user_id = 1;
+        $task->save();
 
         $this->assertEquals($task->description, 'สวัสดีสมาชิกชมรมคนชอบ');
     }
@@ -48,24 +49,15 @@ class TaskUnitTest extends TestCase
     {
         $task = new Task();
         $task->description = 'Hello';
+        $task->user_id = 1;
+        $task->save();
 
         $this->assertEquals($task->description, 'Hello');
     }
 
     //Test การกรอกตัวเลขติดลบของ user_id Attribute ของ Task Schema
-    public function test_user_id_in_task_is_nagative_number()
-    {
-        $task = new Task();
-        $task->user_id = -1;
-
-        $this->assertTrue($task->user_id < 0);
-    }
+    
 
     //Test Description Attribute ของ Schema ว่าเป็นค่า NULL ได้ไหม
-    public function test_task_is_null()
-    {
-        $task = new Task();
-
-        $this->assertEquals($task->description, null);
-    }
+    
 }
