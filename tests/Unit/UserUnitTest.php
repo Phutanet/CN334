@@ -6,6 +6,8 @@ use Tests\TestCase;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use \Illuminate\Database\QueryException;
+
 use App\Models\User;
 
 
@@ -27,16 +29,28 @@ class UserUnitTest extends TestCase
     //ทดสอบว่า Email Attribute มีค่าซ้ำกันหรือไม่
     public function test_email_duplication()
     {
-        $user = User::all();
-        $setUser = array();
+        try {
 
-        foreach ($user as $i) {
-            if (in_array($i->email, $setUser)){
-                $this->assertTrue(false);
-            }
-            array_push($setUser,$i->email);
+            $user1 = new User();
+            $user1->id = 4;
+            $user1->name = 'user1';
+            $user1->email = 'a@abc.com';
+            $user1->password = 'password';
+            $user1->save();
+
+            $user2 = new User();
+            $user2->id = 5;
+            $user2->name = 'user2';
+            $user2->email = 'a@abc.com';
+            $user2->password = 'password2';
+            $user2->save();
+
+            $this->assertTrue(false);
+
+        } catch (QueryException $e) {
+            $this->assertTrue(true);
         }
-        $this->assertTrue(true);
+        
     }
 
     //ทดสอบ Name Attribute ห้ามมี Character เกิน 40 ตัว

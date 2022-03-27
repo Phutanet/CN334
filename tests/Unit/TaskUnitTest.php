@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use \Illuminate\Database\QueryException;
 
 use App\Models\Task;
 
@@ -72,14 +73,14 @@ class TaskUnitTest extends TestCase
     //Test Description Attribute ของ Schema ว่าเป็นค่า NULL ได้ไหม
     public function test_task_is_null()
     {
-        $task = Task::all();
-
-        foreach ($task as $i) {
-            if ($i->description != null) {
-                continue;
-            }
+        try {
+            $task = new Task();
+            $task->user_id = 1;
+            $task->save();
             $this->assertTrue(false);
+        } 
+        catch (QueryException $e) {
+            $this->assertTrue(true);
         }
-        $this->assertTrue(true);
     }
 }
