@@ -31,7 +31,4 @@ class TaskIntegrationTest extends TestCase
                 'message' => 'create success'
             ]);
     }
-
-    //ทดสอบ user สามารถสร้าง task ได้มากกว่า 1 task
-    //ทดสอบการมีอยู่ของ task ของ user ที่ถูกลบไปแล้ว
 }
