@@ -9,9 +9,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-use App\Models\User;
-
-class LoginTestBAT extends DuskTestCase
+class LoginAlternativeTest extends DuskTestCase
 {
     use RefreshDatabase, WithFaker;
 
