@@ -26,8 +26,8 @@ class UserUnitTest extends TestCase
             ));
     }
 
-    //ทดสอบว่า Email Attribute มีค่าซ้ำกันหรือไม่
-    public function test_email_duplication()
+    //ทดสอบว่า Email Attribute มีค่าซ้ำกันได้หรือไม่
+    public function test_email_can_duplication()
     {
         try {
 

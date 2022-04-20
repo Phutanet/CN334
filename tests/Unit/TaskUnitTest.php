@@ -71,7 +71,7 @@ class TaskUnitTest extends TestCase
     }
 
     //Test Description Attribute ของ Schema ว่าเป็นค่า NULL ได้ไหม
-    public function test_task_is_null()
+    public function test_task_description_is_null()
     {
         try {
             $task = new Task();

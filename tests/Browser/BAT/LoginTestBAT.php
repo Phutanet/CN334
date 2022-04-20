@@ -11,7 +11,7 @@ use Tests\DuskTestCase;
 
 use App\Models\User;
 
-class LoginTest extends DuskTestCase
+class LoginTestBAT extends DuskTestCase
 {
     use RefreshDatabase, WithFaker;
 

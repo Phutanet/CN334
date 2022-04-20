@@ -9,10 +9,10 @@ use Tests\TestCase;
 use App\Models\Task;
 use App\Models\User;
 
-class TaskTest extends TestCase
+class TaskIntegrationTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
-    
+
     public function test_create_task_successfully() 
     {
 
@@ -31,4 +31,7 @@ class TaskTest extends TestCase
                 'message' => 'create success'
             ]);
     }
+
+    //ทดสอบ user สามารถสร้าง task ได้มากกว่า 1 task
+    //ทดสอบการมีอยู่ของ task ของ user ที่ถูกลบไปแล้ว
 }

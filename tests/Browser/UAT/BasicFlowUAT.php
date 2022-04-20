@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class RegisterTest extends DuskTestCase
+class BasicFlowUAT extends DuskTestCase
 {
     public function test_user_can_go_to_register_page()
     {
@@ -17,4 +17,8 @@ class RegisterTest extends DuskTestCase
                     ->assertPathIs('/register');
         });
     }
+
+    //user สามารถสร้าง task ได้
+    //user สามารถแก้ไข task ได้
+    //user สามารถลบ task ได้
 }
