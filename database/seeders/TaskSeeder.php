@@ -20,21 +20,21 @@ class TaskSeeder extends Seeder
             "id" => 1,
             "name" => "ice",
             "email" => "ice@gmail.com",
-            "password" => "password",
+            "password" => bcrypt("password"),
         ]);
 
         User::create([
             "id" => 2,
             "name" => "nice",
             "email" => "nice@gmail.com",
-            "password" => "password",
+            "password" => bcrypt("password"),
         ]);
 
         User::create([
             "id" => 3,
             "name" => "kerk",
             "email" => "kerk@gmail.com",
-            "password" => "password",
+            "password" => bcrypt("password"),
         ]);
 
         //Create Task Seeder
